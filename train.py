@@ -2,12 +2,12 @@ import torch
 import torch.nn as nn
 import torch.optim as optim
 from torch.utils.data import DataLoader, random_split
-from torchvision import datasets, transforms, models
+from torchvision import datasets, transforms
 from torch.optim.lr_scheduler import ReduceLROnPlateau
 import numpy as np
 import os
 from tqdm import tqdm
-
+from model import Classifier
 
 # Dataloader
 transform = transforms.Compose([
@@ -24,30 +24,12 @@ val_size = len(full_dataset) - train_size  # 20% for validation
 
 train_dataset, val_dataset = random_split(full_dataset, [train_size, val_size])
 
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4)
-val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=4)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4, persistent_workers=True)
+val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=4, persistent_workers=True)
 
 dataloaders = {'train': train_loader, 'val': val_loader}
 
-
 if __name__ == "__main__":
-
-    # Load pre-trained DINO model
-    dino_model = torch.hub.load('facebookresearch/dinov2', 'dinov2_vits14')
-    dino_model.eval()
-
-    # Define a custom classifier
-    class Classifier(nn.Module):
-        def __init__(self, num_classes):
-            super(Classifier, self).__init__()
-            self.dino_model = dino_model
-            self.fc = nn.Linear(384, num_classes)
-
-        def forward(self, x):
-            with torch.no_grad():
-                x = self.dino_model(x)
-            x = self.fc(x)
-            return x
 
     device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
     num_classes = len(full_dataset.classes)
@@ -62,7 +44,6 @@ if __name__ == "__main__":
     n_epochs_stop = 6
     epochs_no_improve = 0
     min_val_loss = np.Inf
-
 
     # Training loop
     for epoch in range(100):  # for the sake of example, we train for 100 epochs
@@ -80,7 +61,7 @@ if __name__ == "__main__":
             total = 0
 
             # Iterate over data with tqdm progress bar
-            with tqdm(total=len(dataloaders[phase]), unit='batch') as pbar:
+            with tqdm(total=len(dataloaders[phase]), unit='batch') as p:
                 for inputs, labels in dataloaders[phase]:
                     inputs = inputs.to(device)
                     labels = labels.to(device)
@@ -105,8 +86,8 @@ if __name__ == "__main__":
                     correct += (preds == labels).sum().item()
 
                     # Update tqdm progress bar
-                    pbar.set_postfix({'loss': loss.item(), 'accuracy': 100 * correct / total})
-                    pbar.update(1)
+                    p.set_postfix({'loss': loss.item(), 'accuracy': 100 * correct / total})
+                    p.update(1)
 
             epoch_loss = running_loss / len(dataloaders[phase].dataset)
             epoch_acc = 100 * correct / total
