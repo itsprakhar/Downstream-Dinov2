@@ -58,6 +58,6 @@ License
 Distributed under the MIT License. See LICENSE for more information.
 
 Contact
-Your Name - example@example.com
+Prakhar Thakur - itsprakharthakur@gmail.com
 
 Project Link: https://github.com/itsprakhar/Simple-DinoV2-Classification
