@@ -64,7 +64,7 @@ A demo notebook is provided to guide you on how to use the trained model to clas
 
 ## License
 
-Distributed under the MIT License. See `LICENSE` for more information【18†source】.
+DINOv2 code and model weights are released under the CC-BY-NC 4.0 license. See LICENSE for additional details.
 
 ## Contact
 
