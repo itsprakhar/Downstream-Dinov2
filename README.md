@@ -69,4 +69,5 @@ DINOv2 code and model weights are released under the CC-BY-NC 4.0 license. See L
 ## Contact
 
 Prakhar Thakur - itsprakharthakur@gmail.com
+
 Project Link: https://github.com/itsprakhar/Simple-DinoV2-Classification.
