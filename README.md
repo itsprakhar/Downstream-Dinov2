@@ -1,6 +1,6 @@
 # Simple-DinoV2-Classification
 
-Welcome to the Simple-DinoV2-Classification repository! This project provides an easy-to-use implementation of the DINOv2 model developed by Facebook, allowing you to train and classify images effectively【14†source】. 
+Welcome to the Simple-DinoV2-Classification repository! This project provides an easy-to-use implementation of the DINOv2 model developed by Facebook, allowing you to train and classify images effectively. 
 
 The DINOv2 model used in this project is originally developed by Facebook AI and can be found at facebookresearch/dinov2.
 
@@ -20,7 +20,7 @@ The following packages are required to run the code:
   * Pip
   * SubmitIt (Install via `git+https://github.com/facebookincubator/submitit`)
 
-All the dependencies can be installed using the provided conda.yml file【15†source】.
+All the dependencies can be installed using the provided conda.yml file.
 
 ## Installation
 
@@ -56,7 +56,7 @@ Prepare your dataset and place it in the `data/train` directory. The data should
 python train.py
 ```
 
-This will train the model for 100 epochs (modifiable in the script), using the DINOv2 model as a feature extractor and a custom classifier. The training process includes data augmentation, training/validation splitting, and early stopping【17†source】.
+This will train the model for 100 epochs (modifiable in the script), using the DINOv2 model as a feature extractor and a custom classifier. The training process includes data augmentation, training/validation splitting, and early stopping.
 
 ## Demo
 
@@ -69,4 +69,4 @@ DINOv2 code and model weights are released under the CC-BY-NC 4.0 license. See L
 ## Contact
 
 Prakhar Thakur - itsprakharthakur@gmail.com
-Project Link: https://github.com/itsprakhar/Simple-DinoV2-Classification【19†source】.
+Project Link: https://github.com/itsprakhar/Simple-DinoV2-Classification.
