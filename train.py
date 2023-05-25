@@ -24,8 +24,8 @@ val_size = len(full_dataset) - train_size  # 20% for validation
 
 train_dataset, val_dataset = random_split(full_dataset, [train_size, val_size])
 
-train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True, num_workers=4, persistent_workers=True)
-val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False, num_workers=4, persistent_workers=True)
+train_loader = DataLoader(train_dataset, batch_size=32, shuffle=True) #, num_workers=4, persistent_workers=True)
+val_loader = DataLoader(val_dataset, batch_size=32, shuffle=False) #, num_workers=4, persistent_workers=True)
 
 dataloaders = {'train': train_loader, 'val': val_loader}
 
