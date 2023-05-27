@@ -67,4 +67,4 @@ Prakhar Thakur - itsprakharthakur@gmail.com
 
 Project Link: https://github.com/itsprakhar/Simple-DinoV2-Classification.
 
-Please ⭐ if you find useful so i find the motivation to imrove this. Thanks
+Please ⭐ if you find it useful so that I find the motivation to keep improving this. Thanks
