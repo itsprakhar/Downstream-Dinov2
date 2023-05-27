@@ -6,21 +6,7 @@ The DINOv2 model used in this project is originally developed by Facebook AI and
 
 ## Requirements
 
-The following packages are required to run the code:
-
-  * Python (version 3.9)
-  * PyTorch (version 2.0.0)
-  * Torchvision (version 0.15.0)
-  * Torchmetrics (version 0.10.3)
-  * OmegaConf
-  * Fvcore
-  * IOPath
-  * XFormers (version 0.0.18)
-  * CUML (version 11)
-  * Pip
-  * SubmitIt (Install via `git+https://github.com/facebookincubator/submitit`)
-
-All the dependencies can be installed using the provided conda.yml file.
+All the dependencies can be installed using the provided requirements.txt file.
 
 ## Installation
 
@@ -39,7 +25,7 @@ All the dependencies can be installed using the provided conda.yml file.
 3. Create a conda environment and install dependencies:
 
    ```
-   conda env create -f conda.yml
+    conda create --name dinov2 --file requirements.txt
    ```
 
 4. Activate the conda environment:
@@ -54,6 +40,15 @@ Prepare your dataset and place it in the `data/train` directory. The data should
 
 ```
 python train.py
+```
+
+Note: This will use the smallest DinoV2 model to use any other, you can change this part in the train.py code
+
+```
+model = Classifier(num_classes) # this will load the small model
+# model = Classifier(num_classes, backbone = 'dinov2_b') # to load the base model
+# model = Classifier(num_classes, backbone = 'dinov2_l') # to load the large model
+# model = Classifier(num_classes, backbone = 'dinov2_g') # to load the largest model
 ```
 
 This will train the model for 100 epochs (modifiable in the script), using the DINOv2 model as a feature extractor and a custom classifier. The training process includes data augmentation, training/validation splitting, and early stopping.
