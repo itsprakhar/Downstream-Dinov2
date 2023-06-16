@@ -1,6 +1,6 @@
 # Downstream-Dino-V2
 
-Welcome to the Downstream-Dino-V2 repository! This project provides an easy-to-use implementation of the DINOv2 model developed by Facebook, allowing you to train it for downstream tasks effectively.
+Welcome to the Downstream-Dinov2 repository! This project provides an easy-to-use implementation of the DINOv2 model developed by Facebook, allowing you to train it for downstream tasks effectively.
 
 ## ToDo
 ✅ Add classification model <br />
@@ -21,7 +21,7 @@ All the dependencies can be installed using the provided requirements.txt file.
 1. Clone the repository:
 
    ```
-   git clone https://github.com/itsprakhar/Downstream-Dino-V2
+   git clone https://github.com/itsprakhar/Downstream-Dinov2
    ```
 
 2. Change the directory:
@@ -73,6 +73,6 @@ DINOv2 code and model weights are released under the CC-BY-NC 4.0 license. See L
 
 Prakhar Thakur - itsprakharthakur@gmail.com
 
-Project Link: https://github.com/itsprakhar/Downstream-Dino-V2
+Project Link: https://github.com/itsprakhar/Downstream-Dinov2
 
 Please ⭐ if you find it useful so that I find the motivation to keep improving this. Thanks
