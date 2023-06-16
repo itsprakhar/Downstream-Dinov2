@@ -6,7 +6,7 @@ Welcome to the Downstream-Dino-V2 repository! This project provides an easy-to-u
 ✅ Add classification model <br />
 ✅ Add training and inference code for classification model <br />
 ✅ Add exapmle notebook <br />
-☐ Add segmentation model <br />
+✅ Add segmentation model <br />
 ☐ Add training code for segmentation model <br />
 ☐ Add Segmentation model to the example notebook <br />
 
