@@ -2,13 +2,13 @@
 
 Welcome to the Downstream-Dino-V2 repository! This project provides an easy-to-use implementation of the DINOv2 model developed by Facebook, allowing you to train it for downstream tasks effectively.
 
-# ToDo
-✅ Add classification model
-✅ Add training and inference code for classification model
-✅ Add exapmle notebook
-☐ Add segmentation model
-☐ Add training code for segmentation model
-☐ Add Segmentation model to the example notebook
+## ToDo
+✅ Add classification model <br />
+✅ Add training and inference code for classification model <br />
+✅ Add exapmle notebook <br />
+☐ Add segmentation model <br />
+☐ Add training code for segmentation model <br />
+☐ Add Segmentation model to the example notebook <br />
 
 The DINOv2 model used in this project is originally developed by Facebook AI and can be found at facebookresearch/dinov2.
 
