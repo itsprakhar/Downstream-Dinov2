@@ -1,6 +1,14 @@
-# Simple-DinoV2-Classification
+# Downstream-Dino-V2
 
-Welcome to the Simple-DinoV2-Classification repository! This project provides an easy-to-use implementation of the DINOv2 model developed by Facebook, allowing you to train and classify images effectively. 
+Welcome to the Downstream-Dino-V2 repository! This project provides an easy-to-use implementation of the DINOv2 model developed by Facebook, allowing you to train it for downstream tasks effectively.
+
+# ToDo
+✅ Add classification model
+✅ Add training and inference code for classification model
+✅ Add exapmle notebook
+☐ Add segmentation model
+☐ Add training code for segmentation model
+☐ Add Segmentation model to the example notebook
 
 The DINOv2 model used in this project is originally developed by Facebook AI and can be found at facebookresearch/dinov2.
 
@@ -13,13 +21,13 @@ All the dependencies can be installed using the provided requirements.txt file.
 1. Clone the repository:
 
    ```
-   git clone https://github.com/itsprakhar/Simple-DinoV2-Classification.git
+   git clone https://github.com/itsprakhar/Downstream-Dino-V2
    ```
 
 2. Change the directory:
 
    ```
-   cd Simple-DinoV2-Classification
+   cd Downstream-Dino-V2
    ```
 
 3. Create a conda environment and install dependencies:
@@ -65,6 +73,6 @@ DINOv2 code and model weights are released under the CC-BY-NC 4.0 license. See L
 
 Prakhar Thakur - itsprakharthakur@gmail.com
 
-Project Link: https://github.com/itsprakhar/Simple-DinoV2-Classification.
+Project Link: https://github.com/itsprakhar/Downstream-Dino-V2
 
 Please ⭐ if you find it useful so that I find the motivation to keep improving this. Thanks
