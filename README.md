@@ -42,15 +42,15 @@ All the dependencies can be installed using the provided requirements.txt file.
    conda activate dinov2
    ```
 
-## Usage
+## Calssification Usage
 
 Prepare your dataset and place it in the `data/train` directory. The data should be structured such that each class has its own subdirectory containing the respective images. Run the training script with:
 
 ```
-python train.py
+python train_classifier.py
 ```
 
-Note: This will use the smallest DinoV2 model to use any other, you can change this part in the train.py code
+Note: This will use the smallest DinoV2 model to use any other, you can change this part in the train_classifier.py code
 
 ```
 model = Classifier(num_classes) # this will load the small model
