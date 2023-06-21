@@ -1,3 +1,3 @@
-/data/train/*
+/data/classification/train/*
 .ipynb_checkpoints
 __pycache__

@@ -5,8 +5,10 @@ from torchvision import datasets, transforms
 import numpy as np
 from tqdm import tqdm
 
+
+
 # Define a function for loading and transforming image data
-def load_data(data_dir='data/train'):
+def load_classification_data(data_dir='data/classification/train'):
     # Define transformations: random crop, random flip, convert to tensor, and normalize
     transform = transforms.Compose([
         transforms.RandomResizedCrop(224),  # Resize and crop the image to a 224x224 square
@@ -32,8 +34,10 @@ def load_data(data_dir='data/train'):
 
     return {'train': train_loader, 'val': val_loader}, len(full_dataset.classes)  # Return loaders and number of classes in the dataset
 
+
+
 # Define a function to train the model
-def train_model(model, dataloaders, criterion, optimizer, scheduler, device, n_epochs_stop=6):
+def train_classification_model(model, dataloaders, criterion, optimizer, scheduler, device, n_epochs_stop=6):
     # Initialize variables
     min_val_loss = np.Inf  # Minimum validation loss starts at infinity
     epochs_no_improve = 0  # No improvement in epochs counter

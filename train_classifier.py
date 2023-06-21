@@ -1,5 +1,5 @@
 # Import necessary modules and functions
-from tools.training import load_data, train_model
+from tools.training import load_classification_data, train_classification_model
 from model import Classifier  # Import custom model from model.py file
 import torch
 import torch.nn as nn
@@ -11,7 +11,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 # Use the load_data function from tools.training to load our dataset
 # This function presumably returns a set of data loaders and the number of classes in the dataset
-dataloaders, num_classes = load_data()
+dataloaders, num_classes = load_classification_data()
 
 # Initialize our classifier model with the number of output classes equal to num_classes
 
@@ -38,4 +38,4 @@ scheduler = ReduceLROnPlateau(optimizer, 'min', patience=7, verbose=True)
 
 # Finally, use the train_model function from tools.training to train our model
 # The model, dataloaders, loss function, optimizer, learning rate scheduler, and device are passed as arguments
-model = train_model(model, dataloaders, criterion, optimizer, scheduler, device)
+model = train_classification_model(model, dataloaders, criterion, optimizer, scheduler, device)
