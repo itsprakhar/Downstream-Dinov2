@@ -7,8 +7,9 @@ Welcome to the Downstream-Dinov2 repository! This project provides an easy-to-us
 ✅ Add training and inference code for classification model <br />
 ✅ Add exapmle notebook <br />
 ✅ Add segmentation model <br />
-☐ Add training code for segmentation model <br />
-☐ Add Segmentation model to the example notebook <br />
+✅ Add training code for segmentation model <br />
+✅ Add Segmentation model to the example notebook <br />
+☐ Refactot the code for segmentation and add comments <br />
 
 The DINOv2 model used in this project is originally developed by Facebook AI and can be found at facebookresearch/dinov2.
 
