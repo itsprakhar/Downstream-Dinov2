@@ -1,5 +1,5 @@
 # Import necessary modules and functions
-from tools.training import load_classification_data, train_classification_model
+from tools.classification import load_classification_data, train_classification_model
 from model import Classifier  # Import custom model from model.py file
 import torch
 import torch.nn as nn
