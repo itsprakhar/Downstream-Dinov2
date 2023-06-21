@@ -41,7 +41,10 @@ class conv_head(nn.Module):
     def __init__(self, embedding_size = 384, num_classes = 5):
         super(conv_head, self).__init__()
         self.segmentation_conv = nn.Sequential(
-            nn.Conv2d(embedding_size, num_classes, kernel_size=1),
+            nn.Upsample(scale_factor=2),
+            nn.Conv2d(embedding_size, 64, (3,3), padding=(1,1)),
+            nn.Upsample(scale_factor=2),
+            nn.Conv2d(64, num_classes, (3,3), padding=(1,1)),
         )
 
     def forward(self, x):
@@ -94,3 +97,6 @@ class Segmentor(nn.Module):
             x = x.reshape(batch_size,self.embedding_size,int(mask_dim[0]),int(mask_dim[1]))
         x = self.head(x)
         return x
+
+
+

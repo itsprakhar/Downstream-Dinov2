@@ -23,7 +23,7 @@ img_transform = transforms.Compose([
 ])
 
 mask_transform = transforms.Compose([
-    transforms.Resize((32,32)),
+    transforms.Resize((32*4,32*4)),
     transforms.ToTensor(),
 ])
 
@@ -38,8 +38,8 @@ train_imgs, valid_imgs = train_test_split(dataset.images, test_size=0.2, random_
 train_dataset = SegmentationDataset(img_dir=r"data\segmentation/train/imgs", mask_dir=r"data\segmentation/train/labels", num_classes = 5, img_transform=img_transform, mask_transform=mask_transform, images=train_imgs)
 valid_dataset = SegmentationDataset(img_dir=r"data\segmentation/train/imgs", mask_dir=r"data\segmentation/train/labels", num_classes = 5, img_transform=img_transform, mask_transform=mask_transform, images=valid_imgs)
 
-train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True) #, num_workers=4)
-valid_loader = DataLoader(valid_dataset, batch_size=1) #, num_workers=4)
+train_loader = DataLoader(train_dataset, batch_size=2, shuffle=True) #, num_workers=4)
+valid_loader = DataLoader(valid_dataset, batch_size=2) #, num_workers=4)
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
